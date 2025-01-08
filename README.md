@@ -14,13 +14,13 @@
             color: #333;
         }
         header {
-            background-color: #4CAF50;
+            background-color: #1E90FF; /* Niebieski kolor */
             color: white;
             padding: 10px 0;
             text-align: center;
         }
         nav {
-            background-color: #333;
+            background-color: #4682B4; /* Niebieski kolor */
             overflow: hidden;
         }
         nav a {
@@ -37,13 +37,21 @@
             padding: 20px;
         }
         footer {
-            background-color: #333;
+            background-color: #4682B4; /* Niebieski kolor */
             color: white;
             text-align: center;
             padding: 10px 0;
             position: fixed;
             width: 100%;
             bottom: 0;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
@@ -83,6 +91,12 @@
     <p>Wykorzystanie promieniowania słonecznego do produkcji energii elektrycznej lub ciepła.</p>
     <h3>2. Energia wiatrowa</h3>
     <p>Wykorzystanie wiatru do napędu turbin wiatrowych generujących energię elektryczną.</p>
+
+    <!-- Dodane zdjęcie offshore -->
+    <div class="image-container">
+        <img src="https://example.com/path-to-your-image.jpg" alt="Farmy wiatrowe na morzu">
+    </div>
+
     <h3>3. Energia wodna</h3>
     <p>Wykorzystanie ruchu wód (np. rzek, mórz) do produkcji energii elektrycznej.</p>
     <h3>4. Energia geotermalna</h3>
@@ -104,4 +118,5 @@
 
 </body>
 </html>
+
 
