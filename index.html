@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Odnawialne Źródła Energii</title>
     <style>
         body {
@@ -14,13 +13,13 @@
             color: #333;
         }
         header {
-            background-color: #1E90FF; /* Niebieski kolor */
+            background-color: #3d8a5d;
             color: white;
             padding: 10px 0;
             text-align: center;
         }
         nav {
-            background-color: #4682B4; /* Niebieski kolor */
+            background-color: #2791ac;
             overflow: hidden;
         }
         nav a {
@@ -32,12 +31,13 @@
         nav a:hover {
             background-color: #ddd;
             color: black;
+            font-weight: bold;
         }
         .content {
             padding: 20px;
         }
         footer {
-            background-color: #4682B4; /* Niebieski kolor */
+            background-color: #4682B4;
             color: white;
             text-align: center;
             padding: 10px 0;
@@ -45,13 +45,11 @@
             width: 100%;
             bottom: 0;
         }
-        .image-container {
-            text-align: center;
-            margin: 20px 0;
+        .hidden {
+            display: none;
         }
-        .image-container img {
-            max-width: 100%;
-            height: auto;
+        h3:hover {
+            font-weight: bold;
         }
     </style>
 </head>
@@ -59,55 +57,70 @@
 
 <header>
     <h1>Odnawialne Źródła Energii (OZE)</h1>
-    <p>Znaczenie energii odnawialnej w XXI wieku</p>
 </header>
 
 <nav>
-    <a href="#oze">Co to jest OZE?</a>
-    <a href="#korzysci">Korzyści</a>
-    <a href="#rodzaje">Rodzaje OZE</a>
-    <a href="#kontakt">Kontakt</a>
+    <a href="#oze" onclick="showPage('oze')">Co to jest OZE?</a>
+    <a href="#korzysci" onclick="showPage('korzysci')">Korzyści</a>
+    <a href="#rodzaje" onclick="showPage('rodzaje')">Rodzaje OZE</a>
+    <a href="#wady" onclick="showPage('wady')">Wady OZE</a>
+    <a href="#kontakt" onclick="showPage('kontakt')">Kontakt</a>
 </nav>
 
 <div class="content" id="oze">
     <h2>Co to jest OZE?</h2>
-    <p>Odnawialne Źródła Energii (OZE) to energia pozyskiwana z naturalnych zasobów, które są nieograniczone, jak słońce, wiatr, woda czy biomasę. W przeciwieństwie do paliw kopalnych, OZE są bardziej przyjazne dla środowiska i zmniejszają naszą zależność od źródeł węgla i ropy naftowej.</p>
+    <p>Odnawialne Źródła Energii (OZE) to energia pozyskiwana z naturalnych zasobów, które są nieograniczone, jak słońce, wiatr, woda czy biomasę.</p>
 </div>
 
-<div class="content" id="korzysci">
+<div class="content hidden" id="korzysci">
     <h2>Korzyści z OZE</h2>
     <ul>
         <li>Zmniejszenie emisji gazów cieplarnianych</li>
         <li>Ochrona środowiska</li>
         <li>Zwiększenie niezależności energetycznej</li>
-        <li>Tworzenie nowych miejsc pracy w sektorze OZE</li>
-        <li>Stabilność cen energii</li>
     </ul>
 </div>
 
-<div class="content" id="rodzaje">
+<div class="content hidden" id="rodzaje">
     <h2>Rodzaje Odnawialnych Źródeł Energii</h2>
-    <h3>1. Energia słoneczna</h3>
-    <p>Wykorzystanie promieniowania słonecznego do produkcji energii elektrycznej lub ciepła.</p>
-    <h3>2. Energia wiatrowa</h3>
-    <p>Wykorzystanie wiatru do napędu turbin wiatrowych generujących energię elektryczną.</p>
-
-    <!-- Dodane zdjęcie offshore -->
-    <div class="image-container">
-        <img src="https://example.com/path-to-your-image.jpg" alt="Farmy wiatrowe na morzu">
+    <h3 onclick="toggleVisibility('energia-sloneczna')">1. Energia słoneczna</h3>
+    <div id="energia-sloneczna" class="hidden">
+        <p>Wykorzystanie promieniowania słonecznego do produkcji energii elektrycznej lub ciepła.</p>
     </div>
-
-    <h3>3. Energia wodna</h3>
-    <p>Wykorzystanie ruchu wód (np. rzek, mórz) do produkcji energii elektrycznej.</p>
-    <h3>4. Energia geotermalna</h3>
-    <p>Wykorzystanie ciepła wewnętrznego Ziemi do produkcji energii.</p>
-    <h3>5. Biomasa</h3>
-    <p>Wykorzystanie materiałów organicznych do produkcji energii cieplnej i elektrycznej.</p>
+    <h3 onclick="toggleVisibility('energia-wiatrowa')">2. Energia wiatrowa</h3>
+    <div id="energia-wiatrowa" class="hidden">
+        <p>Wykorzystanie wiatru do napędu turbin wiatrowych generujących energię elektryczną.</p>
+        <h4>2.1 Elektrownie onshore</h4>
+        <p>Elektrownie wiatrowe zlokalizowane na lądzie.</p>
+        <h4>2.2 Elektrownie offshore</h4>
+        <p>Elektrownie wiatrowe zlokalizowane na morzu.</p>
+    </div>
+    <h3 onclick="toggleVisibility('energia-wodna')">3. Energia wodna</h3>
+    <div id="energia-wodna" class="hidden">
+        <h4>3.1 Energia pływów</h4>
+        <p>Wykorzystanie ruchu wód morskich spowodowanego pływami do produkcji energii elektrycznej.</p>
+        <h4>3.2 Energia fal</h4>
+        <p>Wykorzystanie energii fal morskich do produkcji energii elektrycznej.</p>
+        <h4>3.3 Energia spadku</h4>
+        <p>Wykorzystanie spadku wody w rzekach i wodospadach do produkcji energii elektrycznej.</p>
+    </div>
+    <h3 onclick="toggleVisibility('energia-geotermalna')">4. Energia geotermalna</h3>
+    <div id="energia-geotermalna" class="hidden">
+        <p>Wykorzystanie ciepła pochodzącego z wnętrza Ziemi do produkcji energii elektrycznej lub ciepła.</p>
+    </div>
 </div>
 
-<div class="content" id="kontakt">
+<div class="content hidden" id="wady">
+    <h2>Wady OZE</h2>
+    <ul>
+        <li>Wysokie koszty początkowe instalacji</li>
+        <li>Uzależnienie od warunków pogodowych</li>
+        <li>Wymagania dotyczące dużych powierzchni</li>
+    </ul>
+</div>
+
+<div class="content hidden" id="kontakt">
     <h2>Kontakt</h2>
-    <p>Chcesz dowiedzieć się więcej o odnawialnych źródłach energii? Skontaktuj się z nami!</p>
     <p>Email: info@oze.pl</p>
     <p>Telefon: +48 123 456 789</p>
 </div>
@@ -115,6 +128,25 @@
 <footer>
     <p>&copy; 2025 Odnawialne Źródła Energii. Wszystkie prawa zastrzeżone.</p>
 </footer>
+
+<script>
+    function toggleVisibility(id) {
+        var element = document.getElementById(id);
+        if (element.classList.contains('hidden')) {
+            element.classList.remove('hidden');
+        } else {
+            element.classList.add('hidden');
+        }
+    }
+
+    function showPage(pageId) {
+        var pages = document.querySelectorAll('.content');
+        pages.forEach(function(page) {
+            page.classList.add('hidden');
+        });
+        document.getElementById(pageId).classList.remove('hidden');
+    }
+</script>
 
 </body>
 </html>
